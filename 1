@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+void sum(float a, float b);
+void difference(float a, float b);
+void multiplication(float a, float b);
+void average(float a, float b);
+float max(float a, float b);
+float min(float a, float b);
+
+int main(){
+    
+    setlocale(LC_ALL, "RU");
+    
+    float a;
+    float b;
+    cout << "Введите первое число: ";
+    cin >> a;
+    cout << "Введите второе число: ";
+    cin >> b;
+    sum(a, b);
+    difference(a, b);
+    multiplication(a, b);
+    average(a, b);
+    float module_a;
+    float module_b;
+    if (a < 0)
+        module_a = (-1) * a;
+    else
+        module_a = a;
+    if (b < 0)
+        module_b = (-1) * b;
+    else
+        module_b = b;
+    cout << "Разность максимального и минимального по модулю: " << max(module_a, module_b) - min(module_a, module_b) << endl;
+    
+    return 0;
+}
+
+void sum(float a, float b){
+    cout << "Сумма: " << (a + b) << endl;
+}
+void difference(float a, float b){
+    cout << "Разность: " << (a - b) << endl;
+}
+void multiplication(float a, float b){
+    cout << "Произведение: " << (a * b) << endl;
+}
+void average(float a, float b){
+    cout << "Среднее арифметическое: " << ((a + b) / 2) << endl;
+}
+float max(float a, float b){
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+float min(float a, float b){
+    if (a < b)
+        return a;
+    else
+        return b;
+}
